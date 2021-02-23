@@ -52,7 +52,9 @@
       <section id="transaction">
         <h2 class="sr-only">Transações</h2>
 
-        <a href="#" class="button new">+ Nova Transação</a>
+        <a href="#"
+        
+        class="button new">+ Nova Transação</a>
 
         <table id="data-table">
           <thead>
@@ -65,14 +67,15 @@
           </thead>
           <tbody>
             <tr>
-              <td class="date">L              <td class="expense">- R$ 500,00</td>
+              <td class="description">Luz</td>
+              <td class="expense">- R$ 500,00</td>
               <td class="date">23/01/2021</td>
               <td>
                 <img src="./assets/minus.svg" alt="Remove transactions">
               </td>
             </tr>
             <tr>
-              <td class="date">Ce Website</td>
+              <td class="description">Criação de Website</td>
               <td class="income">R$ 5000,00</td>
               <td class="date">23/01/2021</td>
               <td>
@@ -80,7 +83,7 @@
               </td>
             </tr>
             <tr>
-              <td class="date">I/td>
+              <td class="description">Internet</td>
               <td class="expense">- R$ 200,00</td>
               <td class="date">23/01/2021</td>
               <td>
@@ -92,7 +95,7 @@
       </section>
     </main>
 
-    <div class="modal-overlay active">
+    <div class="modal-overlay">
       <div class="modal">
           <div id="form">
             <h2>Nova Transação</h2>
@@ -143,6 +146,19 @@
         </div>
       </div>
 
-    <footer><p>Dev.Finance$ by Vini Santos</p></footer>
-  </body>
+      <footer><p>Dev.Finance$ by Vini Santos</p></footer>
+
+      <script>
+        Modal = {
+          open(){
+              // Abrir modal
+              // Add a class active ao modal
+          },
+          close(){
+              // Fechar o modal
+              // Remover a class active do modal
+          }
+        }
+      </script>
+    </body>
 </html>
