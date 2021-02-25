@@ -52,8 +52,9 @@
       <section id="transaction">
         <h2 class="sr-only">Transações</h2>
 
-        <a href="#"
-        
+        <a
+        onclick="Modal.open()"
+        href="#"
         class="button new">+ Nova Transação</a>
 
         <table id="data-table">
@@ -138,7 +139,10 @@
               </div>
 
               <div class="input-group actions">
-                <a href="#" class="button cancel">Cancelar</a>
+                <a
+                onclick="Modal.close()"
+                href="#" 
+                class="button cancel">Cancelar</a>
                 <button>Salvar</button>
               </div>
             </form>
@@ -148,17 +152,6 @@
 
       <footer><p>Dev.Finance$ by Vini Santos</p></footer>
 
-      <script>
-        Modal = {
-          open(){
-              // Abrir modal
-              // Add a class active ao modal
-          },
-          close(){
-              // Fechar o modal
-              // Remover a class active do modal
-          }
-        }
-      </script>
+      <script src="./scripts.js"></script>
     </body>
 </html>
