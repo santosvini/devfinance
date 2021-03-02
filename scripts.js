@@ -17,55 +17,77 @@ const Modal = {
   }
 }
 
-const transactions = [
-  {
-    id: 1,
-    description: "Luz",
-    amount: -50001,
-    date: "23/01/2021",
-  },
-  {
-    id: 2,
-    description: "Website",
-    amount: 500000,
-    date: "23/01/2021",
-  },
-  {
-    id: 3,
-    description: "Internet",
-    amount: -20012,
-    date: "23/01/2021",
-  },
-  {
-    id: 4,
-    description: "App",
-    amount: 200000,
-    date: "23/01/2021",
-  },
-]
-
 const Transaction = {
+  all: [
+    {
+      description: "Luz",
+      amount: -50001,
+      date: "23/01/2021",
+    },
+    {
+      description: "Website",
+      amount: 500000,
+      date: "23/01/2021",
+    },
+    {
+      description: "Internet",
+      amount: -20012,
+      date: "23/01/2021",
+    },
+    {
+      description: "App",
+      amount: 200000,
+      date: "23/01/2021",
+    },
+  ],
+
+  add(transaction) {
+      Transaction.all.push(transaction)
+
+      App.reload()
+  },
+
+  remove(index) {
+      Transaction.all.splice(index, 1)
+
+      App.reload()
+
+  },
+
   incomes() {
     let income = 0;
     // pegar todas as transações
     // para cada transação
-    transactions.forEach(transaction => {
-
+    Transaction.all.forEach(transaction => {
+      //se for maior que zero
+      if (transaction.amount > 0) {
+        //somar a uma variável e retornar a variável 
+        income += transaction.amount;
+      }
     })
-    //se for maior que zero
-    //somar a uma variável e retornar a variável 
       return income;
   },
+
   expenses() {
-    return "Aqui"
+    let expense = 0;
+    // pegar todas as transações
+    // para cada transação
+    Transaction.all.forEach(transaction => {
+      //se for menor que zero
+      if (transaction.amount < 0) {
+        //somar a uma variável e retornar a variável 
+        expense += transaction.amount;
+      }
+    })
+      return expense;
   },
+
   total() {
-    return "Discover"
-  },
+      return Transaction.incomes() + Transaction.expenses();
+  }
 }
 
 //Substituir os dados do HTML com os dados do JS
-
 const DOM = {
     transactionsContainer: document.querySelector('#data-table tbody'),
     
@@ -98,13 +120,17 @@ const DOM = {
     updateBalance() {
       document
           .getElementById('incomeDisplay')
-          .innerHTML = Transaction.incomes()
+          .innerHTML = Utils.formatCurrency(Transaction.incomes())
       document
           .getElementById('expenseDisplay')
-          .innerHTML = Transaction.expenses()
+          .innerHTML = Utils.formatCurrency(Transaction.expenses())
       document
           .getElementById('totalDisplay')
-          .innerHTML = Transaction.total()
+          .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTrasactions() {
+      DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -125,8 +151,52 @@ const Utils = {
   }
 }
 
-transactions.forEach(function(transaction) {
-  DOM.addTransaction(transaction)
-})
+const Form = {
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
 
-DOM.updateBalance()
+    getValues() {
+        return {
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value
+        }
+    },
+    validateFields() {
+        const {description, amount, date} = Form.getValues()
+        console.log(description)
+    },
+
+    submit(event) {
+        event.preventDefault()
+
+      // Verificar se todas as informações foram preenchidas
+        Form.validateFields()
+
+      // Formatar os dados para salvar
+      // Form.formatData()
+      // Salvar
+      // Apagar os dados do formulário
+      // Fechar a Modal
+      // Atualizar a aplicação
+    }
+}
+
+const App = {
+    init() {
+
+      Transaction.all.forEach(transaction => {
+        DOM.addTransaction(transaction)
+      })
+      
+      DOM.updateBalance()
+
+    },
+    reload() {
+      DOM.clearTrasactions()
+      App.init()
+    },
+}
+
+App.init()
