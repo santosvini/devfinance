@@ -3,9 +3,9 @@
 </h1>
 
 <p align="center">
-  <a href="#-techs">Techs</a>&nbsp;&nbsp; - &nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp; - &nbsp;&nbsp;
-  <a href="#-destaque">Destaque</a>&nbsp;&nbsp
+  <a href="techs">Techs</a>&nbsp;&nbsp; - &nbsp;&nbsp;
+  <a href="projeto">Projeto</a>&nbsp;&nbsp; - &nbsp;&nbsp;
+  <a href="destaque">Destaque</a>&nbsp;&nbsp;
 
 </p>
 
