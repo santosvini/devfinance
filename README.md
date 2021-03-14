@@ -3,9 +3,11 @@
 </h1>
 
 <p align="center">
-  <a id="#techs" />&nbsp;&nbsp; - &nbsp;&nbsp;
-  <a id="#projeto" />&nbsp;&nbsp; - &nbsp;&nbsp; 
-  <a id="#destaque" />&nbsp;&nbsp;
+  <a href="#techs">Techs<a/>
+    
+  <a href="#projeto">Projeto<a/>
+  
+  <a href="#destaque">Destaque<a/>
 </p>
 
 <br>
