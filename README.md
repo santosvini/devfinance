@@ -14,7 +14,7 @@
   <img alt="dev.finances" src=".github/finance.PNG" width="100%">
 </p>
 
-## 💻:Techs
+## 💻Techs
 Projeto realizado com a abordagem das seguintes tecnologias para aprimorar os estudos sobre o front-end<br>
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)&nbsp;&nbsp;
