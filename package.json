@@ -1,0 +1,21 @@
+{
+  "name": "devfinance",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/santosvini/devfinance.git",
+  "author": "santosvini7 <vini_santos7@live.com>",
+  "license": "MIT",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:open:mobile": "cypress open --config viewportWidth=595,viewportHeight=812",
+    "cy:test": "cypress run",
+    "cy:test:mobile": "cypress run --config viewportWidth=595,viewportHeight=812",
+    "cy:chrome": "cypress run --browser chrome",
+    "cy:firefox": "cypress run --browser firefox",
+    "cy:edge": "cypress run --browser edge",
+    "cy:electron": "cypress run --browser electron"
+  },
+  "devDependencies": {
+    "cypress": "12.5.0"
+  }
+}
