@@ -32,5 +32,7 @@ Projeto realizado com a abordagem das seguintes tecnologias para aprimorar os es
 - Modo GUI : ``` yarn cy:open ```
 - Modo Headless : ``` yarn cy:test ```
 
+https://user-images.githubusercontent.com/46813491/222936517-57256453-ec34-4f5d-9874-3142bdb707ea.mp4
+
 ## 🎆Destaque
 Feito como prática de estudo com a [Rocketseat](https://maratonadiscover.rocketseat.com.br/inscricao) :wave:
