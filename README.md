@@ -5,7 +5,8 @@
 <p align="center">
   <a href="#techs">Techs<a/> |
   <a href="#projeto">Projeto<a/> |
-  <a href="#destaque">Destaque<a/>
+  <a href="#destaque">Destaque<a/> |
+  <a href="#testes">Testes<a/>
 </p>
 
 <br>
@@ -25,6 +26,11 @@ Projeto realizado com a abordagem das seguintes tecnologias para aprimorar os es
 <p>
   Aplicação de controle financeiro, para utilização dos gastos e ganhos, realizando de forma simples um orçamento pessoal :heavy_dollar_sign: 
 <p/>
+
+## 🧪Testes
+
+- Modo GUI : ``` yarn cy:open ```
+- Modo Headless : ``` yarn cy:test ```
 
 ## 🎆Destaque
 Feito como prática de estudo com a [Rocketseat](https://maratonadiscover.rocketseat.com.br/inscricao) :wave:

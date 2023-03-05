@@ -26,22 +26,32 @@
 
 Cypress.Commands.add('criarTransacao', (descricao, valor) => {
   cy.contains('Nova Transação')
-        .should('be.visible')
-        .click()
+    .should('be.visible')
+    .click()
       
-      cy.get('#description')
-        .should('be.visible')
-        .type(descricao)
-  
-      cy.get('#amount')
-        .should('be.visible')
-        .type(valor)
-  
-      cy.get('#date')
-        .should('be.visible')
-        .type("2023-02-25")
-  
-      cy.get('button')
-        .should('be.visible')
-        .click()
+  cy.get('#description')
+    .should('be.visible')
+    .type(descricao)
+
+  cy.get('#amount')
+    .should('be.visible')
+    .type(valor)
+
+  cy.get('#date')
+    .should('be.visible')
+    .type("2023-02-25")
+
+  cy.get('button')
+    .should('be.visible')
+    .click()
+})
+
+Cypress.Commands.add('alert', () => {
+  const stub = cy.stub();
+
+  cy.on("window:alert", stub);
+
+  cy.contains("Nova Transação")
+    .should("be.visible")
+    .click();
 })
