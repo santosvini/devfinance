@@ -1,5 +1,7 @@
 name: Cypress end-to-end tests 🧪👷
-on: [push]
+on: 
+  workflow_dispatch:
+
 jobs:
   chrome:
     runs-on: ubuntu-latest
@@ -54,9 +56,6 @@ jobs:
          browser: edge
   safari:
     runs-on: ubuntu-latest
-    # container: 
-    #   image: cypress/browsers:node-18.14.1-chrome-110.0.5481.96-1-ff-109.0-edge-110.0.1587.41-1
-    #   options: --user 1001
     name: E2E on Webkit
     steps:
       - name: Get code

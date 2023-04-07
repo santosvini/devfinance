@@ -29,6 +29,8 @@ Projeto realizado com a abordagem das seguintes tecnologias para aprimorar os es
 
 ## 🧪Testes
 
+[![Cypress end-to-end tests 🧪👷](https://github.com/santosvini/devfinance/actions/workflows/ci.yml/badge.svg)](https://github.com/santosvini/devfinance/actions/workflows/ci.yml)
+
 - Modo GUI : ``` yarn cy:open ```
 - Modo Headless : ``` yarn cy:test ```
 
