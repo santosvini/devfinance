@@ -16,7 +16,7 @@ jobs:
 
       - name: Run E2E tests
         uses: cypress-io/github-action@v5
-         with:
+        with:
           browser: chrome
   firefox:
     runs-on: ubuntu-latest
