@@ -13,9 +13,14 @@
     "cy:chrome": "cypress run --browser chrome",
     "cy:firefox": "cypress run --browser firefox",
     "cy:edge": "cypress run --browser edge",
-    "cy:electron": "cypress run --browser electron"
+    "cy:electron": "cypress run --browser electron",
+    "cy:webkit": "cypress run --browser webkit"
   },
   "devDependencies": {
-    "cypress": "12.5.0"
+    "cypress": "^12.9.0"
+  },
+  "dependencies": {
+    "cypress-plugin-steps": "^1.1.1",
+    "playwright-webkit": "^1.32.2"
   }
 }

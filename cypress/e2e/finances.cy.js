@@ -8,7 +8,8 @@ describe("Testes e2e da DevFinance$", () => {
   });
 
   context("Validação de elemento ", () => {
-    it("Valida a imagem da DevFinance$", () => {
+    it.only("Valida a imagem da DevFinance$", () => {
+      cy.step('Open a page')
       cy.get('img[alt="Logo Dev Finance"]')
         .should("be.visible");
     });
@@ -222,6 +223,7 @@ describe("Testes e2e da DevFinance$", () => {
       cy.get('footer > p')
         .should("have.text", text)
         .should("be.visible")
-    });
+    }); 
   });
 });
+
