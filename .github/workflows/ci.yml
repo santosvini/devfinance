@@ -22,6 +22,9 @@ jobs:
           build: yarn run build
           start: yarn start
           browser: chrome
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   firefox:
     runs-on: ubuntu-latest
     container: 
@@ -41,6 +44,9 @@ jobs:
           build: yarn run build
           start: yarn start
           browser: firefox
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   edge:
     runs-on: ubuntu-latest
     container: 
@@ -60,6 +66,9 @@ jobs:
          build: yarn run build
          start: yarn start
          browser: edge
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
   safari:
     runs-on: ubuntu-latest
     name: E2E on Webkit
@@ -76,3 +85,6 @@ jobs:
           build: yarn run build
           start: yarn start
           command: yarn cypress run --browser webkit
+        env:
+          CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
