@@ -6,7 +6,7 @@ jobs:
   chrome:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
       options: --user 1001
     name: E2E on Chrome
     steps:
@@ -17,13 +17,15 @@ jobs:
         run: yarn install
 
       - name: Run E2E tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
+          build: yarn run build
+          start: yarn start
           browser: chrome
   firefox:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
       options: --user 1001
     name: E2E on Firefox
     steps:
@@ -34,13 +36,15 @@ jobs:
         run: yarn install
 
       - name: Run E2E tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
-         browser: firefox
+          build: yarn run build
+          start: yarn start
+          browser: firefox
   edge:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-18.15.0-chrome-111.0.5563.146-1-ff-111.0.1-edge-111.0.1661.62-1
+      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
       options: --user 1001
     name: E2E on Edge
     steps:
@@ -51,8 +55,10 @@ jobs:
         run: yarn install
 
       - name: Run E2E tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
+         build: yarn run build
+         start: yarn start
          browser: edge
   safari:
     runs-on: ubuntu-latest
@@ -65,6 +71,8 @@ jobs:
         run: npx playwright install-deps webkit
 
       - name: Run E2E tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         with:
-         command: yarn cypress run --browser webkit
+          build: yarn run build
+          start: yarn start
+          command: yarn cypress run --browser webkit
