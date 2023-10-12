@@ -19,7 +19,6 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: yarn build
           start: yarn start
           browser: chrome
         env:
@@ -41,7 +40,6 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: yarn build
           start: yarn start
           browser: firefox
         env:
@@ -63,7 +61,6 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-         build: yarn build
          start: yarn start
          browser: edge
         env:
@@ -82,7 +79,6 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: yarn build
           start: yarn start
           command: yarn cypress run --browser webkit
         env:
