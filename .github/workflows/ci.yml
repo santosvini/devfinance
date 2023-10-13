@@ -14,18 +14,19 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
+          # build: npm run build
           start: npm start
           browser: chrome
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECTID }}
   firefox:
     runs-on: ubuntu-latest
     container: 
@@ -37,18 +38,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
+          # build: npm run build
           start: npm start
           browser: firefox
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECTID }}
   edge:
     runs-on: ubuntu-latest
     container: 
@@ -60,18 +62,19 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
+          # build: npm run build
           start: npm start
           browser: edge
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECTID }}
   safari:
     runs-on: ubuntu-latest
     name: E2E on Webkit
@@ -85,10 +88,11 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          build: npm run build
+          # build: npm run build
           start: npm start
           command: npm cypress run --browser webkit
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECTID }}
