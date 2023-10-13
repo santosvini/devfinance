@@ -6,11 +6,11 @@ jobs:
   chrome:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
+      image: cypress/browsers:latest
       options: --user 1001
     name: E2E on Chrome
     steps:
-      - name: Get code
+      - name: Checkout
         uses: actions/checkout@v4
       
       - name: Install Dependencies
@@ -20,7 +20,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           # build: npm run build
-          start: npm start
+          # start: npm start
           browser: chrome
           record: true
         env:
@@ -30,7 +30,7 @@ jobs:
   firefox:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
+      image: cypress/browsers:latest
       options: --user 1001
     name: E2E on Firefox
     steps:
@@ -44,7 +44,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           # build: npm run build
-          start: npm start
+          # start: npm start
           browser: firefox
           record: true
         env:
@@ -54,7 +54,7 @@ jobs:
   edge:
     runs-on: ubuntu-latest
     container: 
-      image: cypress/browsers:node-20.6.1-chrome-116.0.5845.187-1-ff-117.0-edge-116.0.1938.76-1
+      image: cypress/browsers:latest
       options: --user 1001
     name: E2E on Edge
     steps:
@@ -68,7 +68,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           # build: npm run build
-          start: npm start
+          # start: npm start
           browser: edge
           record: true
         env:
@@ -89,7 +89,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           # build: npm run build
-          start: npm start
+          # start: npm start
           command: npm cypress run --browser webkit
           record: true
         env:
