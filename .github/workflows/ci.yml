@@ -11,7 +11,7 @@ jobs:
     name: E2E on Chrome
     steps:
       - name: Get code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
       
       - name: Install Dependencies
         run: yarn install
@@ -19,8 +19,10 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          start: yarn start
+          build: npm run build
+          start: npm start
           browser: chrome
+          record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -32,7 +34,7 @@ jobs:
     name: E2E on Firefox
     steps:
       - name: Get code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: yarn install
@@ -40,8 +42,10 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          start: yarn start
+          build: npm run build
+          start: npm start
           browser: firefox
+          record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -53,7 +57,7 @@ jobs:
     name: E2E on Edge
     steps:
       - name: Get code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
 
       - name: Install Dependencies
         run: yarn install
@@ -61,8 +65,10 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-         start: yarn start
-         browser: edge
+          build: npm run build
+          start: npm start
+          browser: edge
+          record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -71,7 +77,7 @@ jobs:
     name: E2E on Webkit
     steps:
       - name: Get code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4
 
       - name: Install webkit dependencies on linux
         run: npx playwright install-deps webkit
@@ -79,8 +85,10 @@ jobs:
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
         with:
-          start: yarn start
-          command: yarn cypress run --browser webkit
+          build: npm run build
+          start: npm start
+          command: npm cypress run --browser webkit
+          record: true
         env:
           CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
